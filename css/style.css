@@ -1,0 +1,537 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&family=Baloo+2:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+header.dark-mode {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+nav ul li a.dark-mode {
+    color: #fff;
+}
+
+footer.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+/* Toggle button appearance (optional) */
+#dark-mode-toggle {
+    background-color: #ff5722;
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Make it float on the screen */
+    bottom: 20px; /* Adjust position */
+    right: 20px;  /* Adjust position */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+    background-color: #F39200;
+    transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+#dark-mode-icon {
+    font-size: 1.5rem; /* Icon size */
+}
+
+body.dark-mode #dark-mode-icon {
+    content: '\f185'; /* Unicode for sun icon */
+    font-family: "Font Awesome 5 Free"; /* Ensure the correct icon font is applied */
+}
+/* General Styles */
+@media (max-width: 768px) {
+    .overview-content {
+      flex-direction: column;
+    }
+  
+    .image-container {
+      margin-top: 20px;
+      margin-right: 0;
+      max-width: 100%;
+    }
+  
+    .text-content {
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #dark-mode-toggle {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+    }
+    #dark-mode-icon {
+        font-size: 1.2rem;
+    }
+}
+/* Initial state for body */
+body {
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 1s forwards; /* Fade in effect */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* End state is fully visible */
+    }
+}
+
+body {
+
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    background: url('../images/red.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    position: relative;
+}
+
+main {
+    padding-top: 60px; /* Set to the same height as the header */
+}
+/* Header Styling */
+/* Reduced Header Height */
+header {
+    position: fixed; /* Keep the header fixed at the top */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0 20px; /* Restore padding */
+    height: 60px; /* Keep height consistent */
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Spread out logo and nav */
+}
+
+.logo-container {
+    position: absolute;
+    left: 20px; /* Align logo to the left */
+}
+.header-image {
+    max-height: 40px; /* Ensure logo fits */
+}
+
+/* Navigation Styling */
+nav {
+    flex: 1; /* Allow nav to take available space */
+    display: flex;
+    justify-content: center; /* Center the nav links */
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Center nav items vertically */
+    justify-content: center; /* Center the links in the nav */
+}
+
+nav ul li {
+    margin: 0 25px; /* Increased space between links */
+    display: flex; /* Flexbox to align icon and text */
+    align-items: center; /* Center icon and text vertically */
+}
+nav ul li a {
+    text-decoration: none;
+    color: black; /* Link color */
+    font-weight: 600; /* Link weight */
+    font-family: 'Roboto', sans-serif;
+    transition: color 0.3s ease; /* Transition for hover effect */
+    display: flex; /* Flexbox to align icon and text */
+    align-items: center; /* Center icon and text vertically */
+}
+nav ul li a i {
+    margin-right: 8px; /* Space between icon and text */
+}
+nav ul li a:hover {
+    color: #ff5722; /* Hover color */
+}
+
+
+
+/* Top-right Image Positioning */
+/* Header Text Styling */
+header h1 {
+    font-size: 3em; /* Adjust size */
+    color: #333; /* Ensure the text is dark enough to contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
+    margin: 0;
+}
+
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Section Styles */
+section {
+    min-height: 100vh; /* Full viewport height for each section */
+    padding: 60px;
+    margin: 40px 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+section.image-section {
+    display: flex;
+    flex-direction: row; /* Arrange content in rows */
+    align-items: center;
+}
+
+/* Section Content */
+section.image-section .content {
+    flex: 1;
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+/* Section Image Styling */
+section.image-section .image-container {
+    flex: 1;
+    padding: 20px;
+}
+
+section.image-section img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    height: auto;
+}
+
+/* Alternate Section Layout */
+section.image-section:nth-child(odd) {
+    flex-direction: row-reverse; /* Reverse the order of content and image for odd sections */
+}
+
+/* Taller Images for Specific Sections */
+#introduction .image-container img,
+#team-expertise .image-container img {
+    height: 90vh; /* Taller images for these sections */
+    width: auto;  /* Maintain aspect ratio */
+}
+
+#company-overview .image-container img,
+#our-approach .image-container img {
+    width: 100%;  /* Wider images for these sections */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Section Headers */
+section h2 {
+    font-family: 'Lobster', cursive; /* Keep your current font */
+    font-size: 3em; /* Size for headers */
+    color: #F39200; /* Color for headers */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    font-weight: bold; /* Make headers bold */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+section h2:hover {
+    color: #ff5722; /* Change color on hover */
+}
+
+section p {
+    font-weight: bold; /* Make paragraph text bold */
+}
+
+/*Company Overview*/
+#company-overview {
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items to the top */
+}
+.image-container {
+    flex: 1; /* Allow the image to take space */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.image-section {
+    padding: 50px 20px;
+  }
+
+  .image-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .overview-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .text-content {
+    flex: 1;
+    margin-right: 20px; /* Adds some space between the text and the image */
+  }
+
+  .image-container {
+    flex: 0 0 300px; /* Set a fixed width for the image container */
+  }
+
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+.content {
+    flex: 2; /* Allow content to take more space */
+}
+/* Subheader Container Styles */
+.about-container {
+    margin-bottom: 20px; /* Space below the About section */
+}
+
+.mission-vision-container {
+    display: flex; /* Align Mission and Vision side by side */
+    justify-content: space-between; /* Space between them */
+  
+}
+
+.mission, .vision {
+    flex: 1; /* Equal space for both */
+    text-align: left; /* Left align text for better readability */
+    margin-top: 20px; /* Space above for visual separation */
+}
+
+#company-overview  h2 {
+    font-family: 'Lobster', cursive; /* Choose a fun font for the header */
+    font-size: 2.5em; /* Size of the section header */
+    color: #F39200; /* Color for the header */
+    margin-bottom: 20px; /* Space below the header */
+    text-align: center; /* Center align the header */
+}
+
+#company-overview a:hover{
+    color: #ff5722;
+}
+
+#company-overview h3 {
+    font-family: 'Roboto', sans-serif; /* Change font if desired */
+    font-size: 1.8em; /* Adjust size */
+    color: rgb(100, 100, 100); /* Subheader color */
+    margin-top: 20px; /* Space above */
+    margin-bottom: 10px; /* Space below */
+}
+
+/* Paragraph Styles for the Company Overview Section */
+#company-overview p {
+    font-family: 'Open Sans', sans-serif; /* Use the main body font */
+    font-size: 1em; /* Adjust font size */
+    color: #333; /* Text color */
+    line-height: 1.6; /* Increased spacing between lines for readability */
+    margin-bottom: 20px; /* Space below paragraphs */
+    max-width: 90%; /* Limit width for better readability */
+}
+
+/* "Our Features" Section */
+.features {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+  }
+
+  
+
+.feature-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.feature {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1 1 200px; /* Flexbox basis for responsiveness */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature i {
+    font-size: 40px;
+    color: #F39200; /* Orange color for icons */
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+/* Pricing Section Styles */
+.pricing-section {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+  }
+.pricing-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.pricing-feature {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    flex: 1 1 200px; /* Flexbox basis for responsiveness */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-feature h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #2e1912; /* Replace with your desired color */
+}
+.pricing-feature .price {
+    font-size: 1.5em; /* Adjust font size */
+    color: #F39200; /* Color for the price */
+    margin: 10px 0; /* Spacing above and below */
+  }
+
+.pricing-feature li {
+    text-align: left;           /* Left align list items */
+    position: relative;         /* For custom bullet points */
+  }
+
+  .pricing-feature li:before {
+    content: "•";               /* Custom bullet point */
+    color: #007BFF;             /* Change color as needed */
+    position: absolute;         /* Position it */
+    left: -1.5em;               /* Adjust left position */
+  }
+.pricing-feature ul {
+    list-style-position: inside; /* Optional: adjust list style */
+    padding-left: 0;            /* Remove default padding */
+    margin: 0;                  /* Remove default margin */
+  }
+
+.pricing-feature ul li {
+    position: relative; /* Position for custom bullet */
+    padding-left: 30px; /* Space for the custom bullet */
+    margin-bottom: 10px; /* Space between items */
+}
+
+.pricing-feature ul li::before {
+    content: "•"; /* Custom bullet point */
+    font-size: 1.2em; /* Size of the bullet */
+    position: absolute; /* Position bullet */
+    left: 0; /* Align left */
+    color: #F39200; /* Color for the bullet */
+}
+
+/* Footer */
+footer {
+    background-color: #F39200; /* Updated background color */ 
+    color: white; /* Ensure text contrast */
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    color: white; 
+    padding: 40px 50px;
+    text-align: center;
+}
+
+.social-media-section {
+    display: flex;
+    align-items: center;
+}
+
+.social-media a {
+    color: #333;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s ease;
+    margin: 0 15px;
+    font-size: 30px; /* Increase icon size */
+    transition: transform 0.3s;
+}
+
+.social-media a:hover {
+    color: #ff5722;
+    transform: scale(1.2); 
+}
+
+.contact-info {
+    text-align: right;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-media-section,
+    .contact-info {
+        margin-bottom: 20px;
+    }
+}
