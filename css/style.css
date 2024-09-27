@@ -242,7 +242,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.9);
+ background: transparent; /* Make header transparent */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 0 20px; /* Restore padding */
     height: 60px; /* Keep height consistent */
