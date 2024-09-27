@@ -18,6 +18,11 @@ toggleButton.addEventListener('click', () => {
     }
 });
 
+
+function toggleMenu() {
+    var navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('show'); /* Toggle the "show" class */
+}
 // Load the user's preferred theme on page load
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');

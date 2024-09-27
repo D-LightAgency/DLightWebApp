@@ -3,6 +3,132 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 /* Dark Mode Styles */
+
+/* ----------------Responsive for mobile screens below 768px--------------- */
+@media (max-width: 768px) {
+    /* General Body Adjustments */
+    body {
+        padding: 10px;
+        line-height: 1.5;
+    }
+
+    /* Header */
+    header {
+        height: 50px; /* Reduce header height */
+        padding: 0 15px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: flex-start; /* Align nav items to the left */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Section Layout Adjustments */
+    section {
+        padding: 20px; /* Reduce padding */
+        margin: 20px 0;
+    }
+
+    /* Company Overview Layout */
+    .overview-content {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .image-container {
+        margin-bottom: 20px; /* Add spacing between image and text */
+    }
+
+    .text-content, .image-container {
+        flex: 1 1 100%; /* Take full width */
+    }
+
+    /* Image Section */
+    section.image-section {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    section.image-section:nth-child(odd) {
+        flex-direction: column; /* Ensure reverse stacking doesn't happen */
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-media-section, .contact-info {
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em; /* Reduce header sizes */
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em; /* Standardize paragraph font size */
+    }
+
+    nav ul li a {
+        font-size: 1em; /* Reduce nav font size for mobile */
+    }
+}
+@media (max-width: 768px) {
+    img {
+        width: 100%; /* Ensure images take up the full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Adjust image height for sections with taller images */
+    #introduction .image-container img,
+    #team-expertise .image-container img {
+        height: auto; /* Remove fixed height */
+        max-height: 300px; /* Limit height for smaller screens */
+    }
+}
+.hamburger {
+    display: none; /* Hidden on desktop */
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide navigation links initially */
+    }
+
+    nav ul.show {
+        display: block; /* Show links when hamburger is clicked */
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Increase padding for touch-friendly buttons */
+    nav ul li a {
+        padding: 15px 20px; /* Add padding for better tap targets */
+    }
+
+    button, .feature, .pricing-feature {
+        padding: 15px; /* Increase padding for buttons */
+        font-size: 1.1em; /* Slightly increase text size */
+    }
+}
+/*-------------------------------------------------------Mobile*/
 body.dark-mode {
     background-color: #333;
     color: #f0f0f0;
@@ -116,7 +242,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.9);
+ background: transparent; /* Make header transparent */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 0 20px; /* Restore padding */
     height: 60px; /* Keep height consistent */
