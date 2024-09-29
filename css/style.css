@@ -211,6 +211,7 @@ body.dark-mode #dark-mode-icon {
 body {
     opacity: 0; /* Start invisible */
     animation: fadeIn 1s forwards; /* Fade in effect */
+    
 }
 
 /* Keyframes for fade-in animation */
@@ -224,12 +225,13 @@ body {
 
     font-family: 'Open Sans', sans-serif;
     color: #333;
-    background: url('../images/home.jpg') no-repeat center center fixed;
+    background: url('../images/homeblur.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     position: relative;
+    
 }
 
 main {
@@ -357,16 +359,18 @@ section {
     min-height: 100vh; /* Full viewport height for each section */
     padding: 60px;
     margin: 40px 0;
-    background-color: rgba(255, 255, 255, 0.85);
+    /* background-color: rgba(255, 255, 255, 0.85); */
+    background-image: url('/images/home.jpg'); /* Image for the section */
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     position: relative;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+    /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6)); */
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 
 section.image-section {
     display: flex;
@@ -414,13 +418,18 @@ section.image-section:nth-child(odd) {
 }
 
 /* Section Headers */
-section h2 {
+section h1 {
     font-family: 'Poppins'; /* Keep your current font */
     font-size: 3em; /* Size for headers */
     color: #F39200; /* Color for headers */
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow effect */
     font-weight: bold; /* Make headers bold */
+}
+
+section h2{
+    color: white;
+    font-family: 'Nexa';
 }
 
 @keyframes slideIn {
@@ -433,12 +442,12 @@ section h2 {
         opacity: 1;
     }
 }
-section h2:hover {
+section h1:hover {
     color: #ff5722; /* Change color on hover */
 }
 section h3{
     color: white;
-    
+    font-weight: 900;
     text-shadow: #222;
  
 }
@@ -446,12 +455,14 @@ section h3{
 section p {
     font-weight: bold; /* Make paragraph text bold */
     font-weight: 3000 ;
+    color: white;
 }
 
 /*Company Overview*/
 #company-overview {
     display: flex; /* Use flexbox for layout */
     align-items: flex-start; /* Align items to the top */
+    background: url('/images/about.jpg');
 }
 
 #company-overview h2:hover{
@@ -527,7 +538,7 @@ section p {
 #company-overview h3 {
     font-family: 'Roboto', sans-serif; /* Change font if desired */
     font-size: 1.8em; /* Adjust size */
-    color: rgb(100, 100, 100); /* Subheader color */
+    color:#F39200; /* Subheader color */
     margin-top: 20px; /* Space above */
     margin-bottom: 10px; /* Space below */
 }
@@ -536,7 +547,7 @@ section p {
 #company-overview p {
     font-family: 'Open Sans', sans-serif; /* Use the main body font */
     font-size: 1em; /* Adjust font size */
-    color: #333; /* Text color */
+    color: white; /* Text color */
     line-height: 1.6; /* Increased spacing between lines for readability */
     margin-bottom: 20px; /* Space below paragraphs */
     max-width: 90%; /* Limit width for better readability */
@@ -560,7 +571,7 @@ section p {
 }
 
 .feature {
-    background-color: #fff;
+    background-color: black;
     border-radius: 10px;
     padding: 20px;
     flex: 1 1 200px; /* Flexbox basis for responsiveness */
@@ -586,7 +597,7 @@ section p {
 .feature h3 {
     font-size: 1.5em;
     margin: 10px 0;
-    color: black;
+    color: rgb(239, 225, 225);
 }
 
 /* Pricing Section Styles */
@@ -672,8 +683,16 @@ footer {
     color: white; 
     padding: 40px 50px;
     text-align: center;
+    border-radius: 20px; /* This gives the rounded corners */
 }
+footer h3 {
+    color: black;
+    text-wrap: wrap;
+    position: relative;
+    text-shadow: #222;
+    text-align: center;
 
+}
 .social-media-section {
     display: flex;
     align-items: center;
