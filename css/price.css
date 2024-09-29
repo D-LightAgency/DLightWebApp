@@ -1,0 +1,221 @@
+/*HEADER*/
+main {
+  padding-top: 60px; /* Set to the same height as the header */
+}
+/* Header Styling */
+/* Reduced Header Height */
+header {
+  position: fixed; /* Keep the header fixed at the top */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0 20px; /* Restore padding */
+  height: 60px; /* Keep height consistent */
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Spread out logo and nav */
+}
+
+.logo-container {
+  position: absolute;
+  left: 20px; /* Align logo to the left */
+}
+.header-image {
+  max-height: 40px; /* Ensure logo fits */
+}
+
+/* Navigation Styling */
+nav {
+  flex: 1; /* Allow nav to take available space */
+  display: flex;
+  justify-content: center; /* Center the nav links */
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center; /* Center nav items vertically */
+  justify-content: center; /* Center the links in the nav */
+}
+
+nav ul li {
+  margin: 0 25px; /* Increased space between links */
+  display: flex; /* Flexbox to align icon and text */
+  align-items: center; /* Center icon and text vertically */
+}
+nav ul li a {
+  text-decoration: none;
+  color: black; /* Link color */
+  font-weight: 600; /* Link weight */
+  font-family: 'Roboto', sans-serif;
+  transition: color 0.3s ease; /* Transition for hover effect */
+  display: flex; /* Flexbox to align icon and text */
+  align-items: center; /* Center icon and text vertically */
+}
+nav ul li a i {
+  margin-right: 8px; /* Space between icon and text */
+}
+nav ul li a:hover {
+  color: #ff5722; /* Hover color */
+}
+
+.dropdown-content {
+  max-height: 300px; /* Limit the height to prevent clipping */
+  overflow-y: auto;  /* Make it scrollable if it's too long */
+  top: 100%;         /* Show below the element */
+  /* Optional: Set a fixed position if needed */
+  position: fixed;
+}
+
+/* Parent container (li or div wrapping "Pricing" link) */
+.dropdown {
+  position: relative; /* Makes the dropdown positioned relative to this container */
+}
+
+/* Dropdown menu */
+.dropdown-content {
+  display: none; /* Initially hidden */
+  position: absolute; /* Positioned absolutely within the parent container */
+  top: 100%; /* Places it directly below the "Pricing" link */
+  left: 0; /* Aligns it to the left edge of the parent (adjust if needed) */
+  background-color: rgba(0, 0, 0, 0.9); /* Background color */
+  min-width: 200px; /* Minimum width of dropdown */
+  z-index: 9999; /* Ensure it stays above other elements */
+}
+
+/* Show the dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Dropdown link styling */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Hover effect for dropdown links */
+.dropdown-content a:hover {
+  background-color: #ff5722;
+}
+
+/* Top-right Image Positioning */
+/* Header Text Styling */
+header h1 {
+  font-size: 3em; /* Adjust size */
+  color: #333; /* Ensure the text is dark enough to contrast */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
+  margin: 0;
+}
+
+header h2 {
+  color: azure;
+}
+
+.top-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+/* Pricing Section Styles */
+.pricing-section {
+    background-color: rgba(255, 255, 255, 0.2);/* Semi-transparent background*/
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+  }
+.pricing-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.pricing-feature {
+    background-color: #F39200;
+    border-radius: 10px;
+    padding: 30px;
+    flex: 1 1 200px; /* Flexbox basis for responsiveness */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-feature h3 { 
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #10100f; /* Replace with your desired color */
+}
+.pricing-feature .price {
+    font-size: 1.5em; /* Adjust font size */
+    color: #060606; /* Color for the price */
+    margin: 10px 0; /* Spacing above and below */
+  }
+
+.pricing-feature li {
+  font-style: Nexa;
+    text-align: left;           /* Left align list items */
+       /* For custom bullet points */
+  }
+
+  .pricing-feature li:before {
+    content: "•";               /* Custom bullet point */
+    color: #007BFF;             /* Change color as needed */
+    position: absolute;         /* Position it */
+    left: -1.5em;               /* Adjust left position */
+  }
+.pricing-feature ul {
+    list-style-position: inside; /* Optional: adjust list style */
+    padding-left: 0;            /* Remove default padding */
+    margin: 0;                  /* Remove default margin */
+  }
+
+.pricing-feature ul li {
+  
+  color: azure;
+    position: relative; /* Position for custom bullet */
+    padding-left: 30px; /* Space for the custom bullet */
+    margin-bottom: 10px; /* Space between items */
+}
+
+.pricing-feature ul li::before {
+    content: "•"; /* Custom bullet point */
+    font-size: 1.2em; /* Size of the bullet */
+    position: absolute; /* Position bullet */
+    left: 0; /* Align left */
+    color: #F39200; /* Color for the bullet */
+}
+/* Header Text Styling */
+header h1 {
+  font-size: 3em; /* Adjust size */
+  color: #333; /* Ensure the text is dark enough to contrast */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
+  margin: 0;
+}
+
+section h1 {
+  font-family: 'Poppins', cursive; /* Keep your current font */
+  font-size: 3em; /* Size for headers */
+  color: #F39200; /* Color for headers */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  font-weight: bold; /* Make headers bold */
+}
+section h2 {
+  color: white;
+}
+section p {
+  font-weight: bold; /* Make paragraph text bold */
+  color: azure;
+}
+
