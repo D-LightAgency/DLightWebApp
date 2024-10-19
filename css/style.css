@@ -371,7 +371,37 @@ section {
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+#company-overview{
+    min-height: 110vh;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the section */
+   
+}
 
+.overview-content{
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap for responsiveness */
+    gap: 20px; /* Adds space between sections */
+    align-items: flex-start; 
+    justify-content: space-between; 
+}
+.three {
+    flex: 1;
+    min-width: 300px; /* Match the minimum width of the story section */
+    max-width: 100%; /* Limit the width to prevent overflow */
+}
+.story {
+    flex: 1;
+    min-width: 300px; /* Set a minimum width to avoid too small sections */
+    margin-right: 20px;
+}
+.mvc div {
+    margin-bottom: 20px; /* Space between sections */
+}
+ul {
+    padding-left: 20px; /* Indent the list */
+    margin: 0;
+}
 section.image-section {
     display: flex;
     flex-direction: row; /* Arrange content in rows */
@@ -452,7 +482,7 @@ section h3{
  
 }
 
-section p {
+section p , section li{
     font-weight: bold; /* Make paragraph text bold */
     font-weight: 3000 ;
     color: white;
@@ -462,26 +492,21 @@ section p {
 #company-overview {
     display: flex; /* Use flexbox for layout */
     align-items: flex-start; /* Align items to the top */
-    background: url('/images/about.jpg');
+    background: url('/images/about.jpg') no-repeat center center; /* Center the image */
+    background-size: cover; /* Scale the image to cover the entire section */
+    background-attachment: scroll; /* Makes the background move with the content
 }
+
+
 
 #company-overview h2:hover{
     color: #ff5722; /* Change color on hover */
 }
 
-.image-container {
-    flex: 1; /* Allow the image to take space */
-    margin-right: 20px; /* Space between image and text */
+.story{
+    text-align: left;
 }
 
-.image-section {
-    padding: 50px 20px;
-  }
-
-  .image-section h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
   .overview-content {
     display: flex;
     flex-wrap: wrap;
@@ -512,14 +537,13 @@ section p {
 }
 
 .mission-vision-container {
-    display: flex; /* Align Mission and Vision side by side */
-    justify-content: space-between; /* Space between them */
-  
+    display: flex;
+    flex-direction: column; /* Stack on top of each other for better responsiveness */
+    gap: 20px; 
 }
 
 .mission, .vision {
-    flex: 1; /* Equal space for both */
-    text-align: left; /* Left align text for better readability */
+    text-align: left;
     margin-top: 20px; /* Space above for visual separation */
 }
 
@@ -545,12 +569,12 @@ section p {
 
 /* Paragraph Styles for the Company Overview Section */
 #company-overview p {
-    font-family: 'Open Sans', sans-serif; /* Use the main body font */
-    font-size: 1em; /* Adjust font size */
-    color: white; /* Text color */
-    line-height: 1.6; /* Increased spacing between lines for readability */
-    margin-bottom: 20px; /* Space below paragraphs */
-    max-width: 90%; /* Limit width for better readability */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 100%; /* Limit width for better readability */
 }
 
 /* "Our Features" Section */
@@ -673,57 +697,70 @@ section p {
 
 /* Footer */
 footer {
-    background-color: #F39200; /* Updated background color */ 
-    color: white; /* Ensure text contrast */
-    padding: 20px 50px;
+    background-color: #333; /* Dark background for a modern look */
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 5px solid #F39200; /* Adds a colored top border */
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+.footer-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    position: relative;
-    color: white; 
-    padding: 40px 50px;
-    text-align: center;
-    border-radius: 20px; /* This gives the rounded corners */
+    align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap;
 }
-footer h3 {
-    color: black;
-    text-wrap: wrap;
-    position: relative;
-    text-shadow: #222;
-    text-align: center;
 
+.social-media-section,
+.contact-info {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px 0;
 }
-.social-media-section {
+
+footer h3 {
+    font-size: 1.5em;
+    color: #F39200;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.social-media {
     display: flex;
-    align-items: center;
+    gap: 15px; /* Space between social media icons */
 }
 
 .social-media a {
-    color: #333;
-    margin-right: 10px;
-    text-decoration: none;
+    color: #F39200;
     font-size: 24px;
-    transition: color 0.3s ease;
-    margin: 0 15px;
-    font-size: 30px; /* Increase icon size */
-    transition: transform 0.3s;
+    transition: transform 0.3s, color 0.3s;
 }
 
 .social-media a:hover {
     color: #ff5722;
-    transform: scale(1.2); 
-}
-
-.contact-info {
-    text-align: right;
+    transform: scale(1.1);
 }
 
 .contact-info p {
-    margin: 5px 0;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
 }
 
+.contact-info p i {
+    color: #F39200; /* Icon color */
+    font-size: 18px;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    footer {
+    .footer-container {
         flex-direction: column;
         text-align: center;
     }
@@ -731,5 +768,10 @@ footer h3 {
     .social-media-section,
     .contact-info {
         margin-bottom: 20px;
+    }
+
+    .social-media-section h3,
+    .contact-info h3 {
+        text-align: center;
     }
 }
